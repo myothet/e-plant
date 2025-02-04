@@ -5,7 +5,7 @@ import {addItem} from './CartSlice';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
-function ProductList() {
+function ProductList({onStopShopping}) {
     const [addedToCart, setAddedToCart] = useState({});
     const [showCart, setShowCart] = useState(false); 
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
@@ -304,7 +304,7 @@ const handlePlantsClick = (e) => {
           
         </div>
  ) :  (
-    <CartItem onContinueShopping={handleContinueShopping}/>
+    <CartItem onContinueShopping={handleContinueShopping} onStopShopping={onStopShopping}/>
 )}
     </div>
     );
